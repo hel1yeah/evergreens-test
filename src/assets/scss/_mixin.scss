@@ -1,0 +1,10 @@
+@mixin myFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+$black: #25383f;
+$grey: #6d6e71;
+$red: #d26441;
+$white: #ffffff;
