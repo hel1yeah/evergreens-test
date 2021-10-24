@@ -1,24 +1,24 @@
 <template>
   <section class="wrapper-header">
-    <vue-carousel></vue-carousel>
-    <app-header></app-header>
-    <main class="main">
-      <app-nav></app-nav>
-    </main>
+    <the-carousel></the-carousel>
+    <the-header></the-header>
+    <the-nav></the-nav>
   </section>
-  <main></main>
+  <main class="main">
+    <div class="main__wrapper"></div>
+  </main>
 </template>
 
 <script>
-import AppHeader from "./components/AppHeader.vue";
-import VueCarousel from "./components/VueCarousel.vue";
-import AppNav from "./components/AppNav.vue";
+import TheHeader from "./components/TheHeader.vue";
+import TheCarousel from "./components/TheCarousel.vue";
+import TheNav from "./components/TheNav.vue";
 
 export default {
   components: {
-    AppHeader,
-    VueCarousel,
-    AppNav,
+    TheHeader,
+    TheCarousel,
+    TheNav,
   },
   name: "App",
 };
