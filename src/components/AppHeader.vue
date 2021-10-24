@@ -32,8 +32,9 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/scss/_mixin.scss";
 .header {
-  max-width: 1180px;
-  padding: 0 10px;
+  max-width: 1020px;
+  padding: 90px 10px 0;
+
   margin: 0 auto;
   display: flex;
   align-content: center;
