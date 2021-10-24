@@ -56,7 +56,6 @@ export default {
   width: 440px;
 }
 .header__nav-list {
-  list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-between;

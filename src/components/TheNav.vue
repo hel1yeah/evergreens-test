@@ -60,7 +60,6 @@ export default {
   padding: 0 24px 0 42px;
 }
 .nav-page__list-item {
-  list-style-type: none;
 }
 .nav-page__list-item-link {
   font-family: "Roboto Condensed", serif;
