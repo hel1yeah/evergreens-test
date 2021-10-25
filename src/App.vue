@@ -8,6 +8,7 @@
     <div class="container">
       <div class="main__wrapper">
         <the-descr></the-descr>
+        <the-calculator></the-calculator>
       </div>
     </div>
   </main>
@@ -18,6 +19,7 @@ import TheHeader from "./components/TheHeader.vue";
 import TheCarousel from "./components/TheCarousel.vue";
 import TheNav from "./components/TheNav.vue";
 import TheDescr from "./components/TheDescr.vue";
+import TheCalculator from "./components/TheCalculator.vue";
 
 export default {
   name: "App",
@@ -26,6 +28,7 @@ export default {
     TheCarousel,
     TheNav,
     TheDescr,
+    TheCalculator,
   },
 };
 </script>
