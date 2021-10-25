@@ -11,21 +11,21 @@
       <div class="descr__text">
         <ul class="descr__list">
           <li class="descr__list-item">
-            <h2 class="descr__list-item-header">Прирост урожая</h2>
+            <h3 class="descr__list-item-header">Прирост урожая</h3>
             <span class="descr__list-item-explanation">
               в сравнении с химическим удобрением
             </span>
             <span class="descr__list-item-percent">30%-250%</span>
           </li>
           <li class="descr__list-item">
-            <h2 class="descr__list-item-header">Экономия</h2>
+            <h3 class="descr__list-item-header">Экономия</h3>
             <span class="descr__list-item-explanation">
               химических удобрений в хозяйстве
             </span>
             <span class="descr__list-item-percent"> до 70% </span>
           </li>
           <li class="descr__list-item">
-            <h2 class="descr__list-item-header">Рост корневой</h2>
+            <h3 class="descr__list-item-header">Рост корневой</h3>
             <span class="descr__list-item-explanation">
               системы растений при использовании
             </span>
@@ -33,6 +33,16 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="descr__to-order">
+      <div class="descr__to-order-text-aside">Хотитите трали-вали ла-лала</div>
+      <h2 class="descr__to-order-text">
+        Узнайте <br />
+        о нагро больше!
+      </h2>
+      <button class="descr__button">
+        <span class="descr__button-title">Узнать больше</span>
+      </button>
     </div>
   </section>
 </template>
@@ -121,5 +131,53 @@ export default {
   font-family: "Roboto", sans-serif;
   font-size: 25px;
   line-height: 19px;
+}
+
+.descr__to-order {
+  float: right;
+  position: relative;
+  text-transform: uppercase;
+}
+.descr__to-order-text {
+  font-size: 42px;
+  line-height: 50px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: $blue;
+  font-weight: 100;
+  margin: 60px 60px 0 0;
+}
+.descr__to-order-text-aside {
+  position: absolute;
+  top: 66px;
+  left: -110px;
+  font-family: "Roboto", sans-serif;
+  line-height: 17px;
+  font-size: 14px;
+  font-weight: normal;
+  max-width: 80px;
+  color: #25383f;
+  text-transform: lowercase;
+  text-align: right;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+.descr__button {
+  border: 5px solid $black;
+  background-color: transparent;
+  margin: 30px 0 0 0;
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-transform: uppercase;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+.descr__button-text {
+  font-family: "RobotoLight", sans-serif;
+  font-size: 23px;
+  line-height: 27px;
+  background-color: $red;
 }
 </style>

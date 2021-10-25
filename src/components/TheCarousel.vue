@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel__wrapper">
+  <aside class="carousel__wrapper">
     <Carousel :settings="settings">
       <Slide v-for="slide in slides" :key="slide">
         <div class="carousel__item">
@@ -7,7 +7,7 @@
         </div>
       </Slide>
     </Carousel>
-  </div>
+  </aside>
 </template>
 
 <script>
