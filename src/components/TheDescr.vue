@@ -41,7 +41,7 @@
         о нагро больше!
       </h2>
       <button class="descr__button">
-        <span class="descr__button-title">Узнать больше</span>
+        <span class="descr__button-text">Узнать больше</span>
       </button>
     </div>
   </section>
@@ -144,7 +144,7 @@ export default {
   font-family: "Roboto Condensed", sans-serif;
   color: $blue;
   font-weight: 100;
-  margin: 60px 60px 0 0;
+  margin: 56px 60px 0 0;
 }
 .descr__to-order-text-aside {
   position: absolute;
@@ -178,6 +178,6 @@ export default {
   font-family: "RobotoLight", sans-serif;
   font-size: 23px;
   line-height: 27px;
-  background-color: $red;
+  background-color: $pink;
 }
 </style>

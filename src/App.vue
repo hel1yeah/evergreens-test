@@ -5,12 +5,12 @@
     <the-nav></the-nav>
   </section>
   <main class="main">
-    <div class="container">
-      <div class="main__wrapper">
-        <the-descr></the-descr>
-        <the-calculator></the-calculator>
-      </div>
+    <!-- <div class="container"> -->
+    <div class="main__wrapper">
+      <the-descr></the-descr>
+      <the-calculator></the-calculator>
     </div>
+    <!-- </div> -->
   </main>
 </template>
 
@@ -42,6 +42,9 @@ export default {
 .main {
 }
 .main__wrapper {
-  @include myFlex;
+  // @include myFlex;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 </style>
