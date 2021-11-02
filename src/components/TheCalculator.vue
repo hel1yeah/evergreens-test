@@ -7,7 +7,10 @@
         <div class="calculator__card-wrapper">
           <label class="calculator__card-label">
             <span class="calculator__card-title-input">Выберите культуру</span>
-            <select class="calculator__card-select">
+            <select
+              class="calculator__card-select"
+              v-model.number.trim="sowing"
+            >
               <option class="calculator__card-option" value="3100">
                 Пшеница ≈ 3100 грн / т
               </option>
@@ -17,7 +20,7 @@
               <option class="calculator__card-option" value="2300">
                 Ячмень ≈ 2300 грн / т
               </option>
-              <option class="calculator__card-option" value="1800">
+              <option selected class="calculator__card-option" value="1800">
                 Овес ≈ 1800 грн / т
               </option>
               <option class="calculator__card-option" value="970">
@@ -33,24 +36,48 @@
           </label>
           <label class="calculator__card-label">
             <span class="calculator__card-title-input">Урожайность, ц/га</span>
-            <input type="text" class="calculator__card-input" />
+            <input
+              type="number"
+              class="calculator__card-input"
+              placeholder="20"
+              v-model.number.trim="prolificness"
+            />
+            <div class="calculator__card-error" v-if="errors.prolificness">
+              {{ errors.prolificness }}
+            </div>
           </label>
+          <div></div>
           <label class="calculator__card-label">
             <span class="calculator__card-title-input"
               >Стоимость хим. удобрения, грн/га</span
             >
-            <input type="text" class="calculator__card-input" />
+            <input
+              type="number"
+              class="calculator__card-input"
+              placeholder="20"
+              v-model.number.trim="price"
+            />
+            <div class="calculator__card-error" v-if="errors.price">
+              {{ errors.price }}
+            </div>
           </label>
           <label class="calculator__card-label">
             <span class="calculator__card-title-input"
               >Посевная площадь, га</span
             >
-            <input type="text" class="calculator__card-input" />
+            <input
+              type="number"
+              class="calculator__card-input"
+              v-model.number.trim="square"
+            />
+            <div class="calculator__card-error" v-if="errors.square">
+              {{ errors.square }}
+            </div>
           </label>
         </div>
 
         <h4 class="calculator__card-profit">Прибыль от добрива</h4>
-        <h4 class="calculator__card-res">50 000</h4>
+        <h4 class="calculator__card-res">{{ sum }}</h4>
         <span class="calculator__card-currency">грн</span>
       </div>
     </div>
@@ -60,6 +87,74 @@
 <script>
 export default {
   name: "TheCalculator",
+  data() {
+    return {
+      sowing: 970,
+      prolificness: 20,
+      price: 15,
+      square: 20,
+      sum: this.sowing + this.prolificness + this.price + this.square,
+      errors: {
+        sowing: null,
+        prolificness: null,
+        price: null,
+        square: null,
+        name: null,
+      },
+    };
+  },
+  mounted() {
+    this.isSum();
+  },
+  methods: {
+    isValid() {},
+    isSum() {
+      this.sum =
+        Number(this.sowing) +
+        Number(this.prolificness) +
+        Number(this.price) +
+        Number(this.square);
+    },
+  },
+  watch: {
+    sowing: function () {
+      console.log(this.sowing);
+      this.isSum();
+    },
+    prolificness: function () {
+      let valid = true;
+      if (this.prolificness.length === 0 || this.prolificness <= 0) {
+        this.errors.prolificness = "Значение не может быть меньше или равно 0";
+        valid = false;
+        console.log("no valid");
+      } else {
+        this.errors.prolificness = null;
+        this.isSum();
+      }
+      return valid;
+    },
+    price: function () {
+      let valid = true;
+      if (this.price.length === 0 || this.price <= 0) {
+        this.errors.price = "Значение не может быть меньше или равно 0";
+        valid = false;
+        console.log("no valid");
+      } else {
+        this.errors.price = null;
+        this.isSum();
+      }
+      return valid;
+    },
+    square: function () {
+      if (this.square.length === 0 || this.square <= 0) {
+        this.errors.square = "Значение не может быть меньше или равно 0";
+        console.log("no valid");
+      } else {
+        this.errors.square = null;
+        this.isSum();
+      }
+    },
+  },
 };
 </script>
 
@@ -132,9 +227,11 @@ export default {
   }
 }
 .calculator__card-label {
+  position: relative;
 }
 .calculator__card-title-input {
   font-family: "RobotoLight", sans-serif;
+  font-weight: 90;
   font-size: 14px;
   line-height: 18px;
   display: block;
@@ -146,6 +243,8 @@ export default {
   height: 30px;
   border: 1px solid $grey-low;
   margin: 8px 0 0 0;
+  color: $grey-low;
+  padding: 0 0 0 10px;
 }
 .calculator__card-option {
 }
@@ -153,6 +252,8 @@ export default {
   width: 100%;
   height: 30px;
   margin: 8px 0 0 0;
+  color: $grey-low;
+  padding: 10px;
 }
 .calculator__card-profit {
   background: $pink;
