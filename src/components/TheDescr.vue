@@ -180,10 +180,23 @@ export default {
   background-color: $pink;
 }
 
-@media screen and (max-wight: 768px) {
+@media screen and (max-width: 1050px) {
+  .descr__capability {
+    margin: -27px 0 0 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .descr__capability {
     justify-content: center;
     margin: 0px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .descr__title {
+    font-size: 45px;
+    line-height: 36px;
   }
 }
 </style>

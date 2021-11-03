@@ -161,8 +161,8 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/scss/_mixin.scss";
 .calculator {
-  width: 520px;
-  height: 590px;
+  width: 523px;
+  height: 543px;
   background-image: url("./../assets/images/preparation.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@ export default {
   padding: 15px 13px;
   max-width: 320px;
   color: $dark-grey;
-  margin: -182px 72px;
+  margin: -182px 0px 0px 133px;
 }
 .calculator__card-inner {
   border: 1px dashed $dark-grey;
@@ -273,5 +273,16 @@ export default {
   font-family: "RobotoLight", sans-serif;
   font-size: 14px;
   line-height: 20px;
+}
+
+@media screen and (max-width: 1135px) {
+  .calculator__card {
+    margin: -182px 0px 0px 80px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .calculator {
+    margin: 230px 0 0 0;
+  }
 }
 </style>
