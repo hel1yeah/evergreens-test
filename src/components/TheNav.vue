@@ -60,6 +60,7 @@ export default {
   padding: 0 24px 0 42px;
 }
 .nav-page__list-item {
+  // width: 120px;
 }
 .nav-page__list-item-link {
   font-family: "Roboto Condensed", serif;
@@ -103,5 +104,19 @@ export default {
 .nav-page__baskets-descr {
   color: $white;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 850px) {
+  .nav-page__list {
+    max-width: 465px;
+    flex-wrap: wrap;
+    padding: 0 0 0 5px;
+  }
+  .nav-page__list-item {
+    width: 120px;
+  }
+  .nav-page__baskets {
+    margin: 0 5px 0 0;
+  }
 }
 </style>

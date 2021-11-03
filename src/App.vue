@@ -47,4 +47,11 @@ export default {
   justify-content: center;
   align-items: flex-end;
 }
+
+@media screen and (max-width: 1050px) {
+  .main__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 </style>

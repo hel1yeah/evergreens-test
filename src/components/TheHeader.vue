@@ -48,12 +48,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 545px;
+  width: 100%;
+  max-width: 545px;
   color: $white;
   text-transform: uppercase;
 }
 .header__nav {
-  width: 440px;
+  width: 100%;
+  max-width: 440px;
 }
 .header__nav-list {
   display: flex;

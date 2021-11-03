@@ -78,7 +78,6 @@ export default {
   margin: 0 0 0 151px;
 }
 .descr__capability {
-  // @include myFlex;
   display: flex;
   margin: -40px 0 0 13px;
 }
@@ -179,5 +178,12 @@ export default {
   font-size: 23px;
   line-height: 27px;
   background-color: $pink;
+}
+
+@media screen and (max-wight: 768px) {
+  .descr__capability {
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+  }
 }
 </style>
